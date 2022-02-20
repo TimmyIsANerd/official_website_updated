@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Coin from '../assets/coin.png';
-// import Back from '../assets/bg.png';
 
 const Container = styled.div`
   padding-top: 70px;
@@ -22,12 +21,14 @@ const Container = styled.div`
 `;
 const Div1 = styled.div`
   padding: 70px 72px;
+  z-index: 999;
 
   @media screen and (max-width: 900px) {
     padding: 20px;
   }
 `;
 const BigT = styled.div`
+  color: #ffffff;
   font-family: Poppins;
   font-size: 60px;
   font-style: normal;
@@ -35,27 +36,9 @@ const BigT = styled.div`
   line-height: 80px;
   letter-spacing: 0em;
   text-align: left;
-
-  br {
-    @media screen and (max-width: 600px) {
-      display: none;
-    }
-  }
-  @media screen and (max-width: 1300px) {
-    font-size: 45px;
-  }
-  @media screen and (max-width: 800px) {
-    color: #fff;
-  }
-
-  @media screen and (max-width: 900px) {
-    font-size: 35px;
-    line-height: 50px;
-    color: #000000;
-    /* text-align: center; */
-  }
 `;
 const SmallT = styled.div`
+  color: #ffffff;
   margin-top: 20px;
   font-family: Poppins;
   font-size: 24px;
@@ -78,29 +61,10 @@ const SmallT = styled.div`
   }
 `;
 const Div2 = styled.div`
-  margin-right: 50px;
-
-  @media screen and (max-width: 900px) {
-    /* display:none; */
-  }
-
-  @media screen and (max-width: 770px) {
-    margin: 0; /* height: 400px; */
-  }
+  padding-right: 50px;
+  z-index: 999;
 `;
-const CoinImg = styled.img`
-  @media screen and (max-width: 1200px) {
-    width: 300px;
-  }
-
-  @media screen and (max-width: 1024px) {
-    width: 400px;
-  }
-
-  @media screen and (max-width: 800px) {
-    width: 270px;
-  }
-`;
+const CoinImg = styled.img``;
 
 const Btn = styled.button`
   margin-top: 20px;

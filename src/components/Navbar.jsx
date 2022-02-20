@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from '../assets/logo.png';
 import {FaBars} from 'react-icons/fa'
+import Button from './Button';
 
 const Container = styled.div` 
 position: sticky;
@@ -12,7 +13,7 @@ padding: 10px 72px;
 display: flex;
 align-items: center;
 justify-content: space-between;
-box-shadow: 0px 5.20673px 72.8942px rgba(0, 0, 0, 0.12);
+/* box-shadow: 0px 5.20673px 72.8942px rgba(0, 0, 0, 0.12); */
 
 
 
@@ -103,7 +104,18 @@ function Navbar() {
                 <NavLinks to='#'>About Us</NavLinks>
                 <NavLinks to='#'>Features</NavLinks>
                 <NavLinks to='#'>White paper</NavLinks>
-                <SpecNavLink to='#'>Launch App</SpecNavLink>
+
+                <Button
+              label="Launch App"
+              borderRadius="5px"
+              color="#fff"
+              bgColor="#000"
+              padding = "16px 25px"
+              margin="0px 30px"
+              fontSize = "16px"
+            />
+               
+               
             </NavMenu>
         </Div2>
         <Div3>
