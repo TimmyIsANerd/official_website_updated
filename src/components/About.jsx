@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Bg from '../assets/backg.png';
 import CandleStick from '../assets/candlestick.png';
-import Lin from '../assets/linear2.png'
 
 
 
@@ -13,16 +12,22 @@ margin-top: 220px;
 display: flex;
 align-items: center; 
 justify-content: space-between;
+padding: 70px 72px;
 
 
 
 @media screen and (max-width: 900px){
     flex-direction: column;
     margin-top: 50px;
+    padding: 20px;
 }
 `
 const Div1 = styled.div` 
-padding: 70px 72px;
+
+
+
+@media screen and (max-width: 900px){
+}
 
 
 `
@@ -35,19 +40,31 @@ background-repeat: no-repeat;
 
 `
 const Con = styled.div` 
-background-image: url(${Lin});
 
 
 `
 const CandleCon = styled.img`
-   
 padding-right: 50px; 
+
+
+
+@media screen and (max-width: 1200px){
+    
+    padding-right: 20px;
+  width: 450px;
+}
+@media screen and (max-width: 900px){
+    
+    padding-right: 20px;
+  width: 300px;
+}
+
 `
 
 
 
 const Ab = styled.div` 
-font-family: Poppins;
+font-family: 'Kinn';
 font-style: normal;
 font-weight: bold;
 font-size: 31px;
@@ -64,6 +81,16 @@ line-height: 62px;
 
 
 color: #4500A0;
+
+
+@media screen and (max-width: 1200px){
+    font-size: 45px;
+    line-height: 50px;
+}
+@media screen and (max-width: 900px){
+    font-size: 40px;
+    line-height: 50px;
+}
 `
 const SmallT = styled.div`
 margin-top: 20px;
@@ -72,10 +99,26 @@ font-style: normal;
 font-weight: normal;
 font-size: 20px;
 line-height: 35px;
-
-
-
 color: rgba(0, 0, 0, 0.7);
+
+br{
+
+@media screen and (max-width: 1200px){
+display:none;
+}
+@media screen and (max-width: 600px){
+display:none;
+}
+}
+
+@media screen and (max-width: 1200px){
+    font-size: 20px;
+    line-height: 30px;
+}
+@media screen and (max-width: 900px){
+    font-size: 16px;
+    line-height: 25px;
+}
 
 `
 
@@ -90,20 +133,7 @@ function About() {
             </Div1>
             <Div2>
                <Con>
-
-
                                    <CandleCon  src={CandleStick}/>
-                                  {/* <Shad2Con  src={Shad2}/>
-
-               <EtherCon src={Ether}/> 
-               <Shad3Con  src={Shad3}/>
-
-               <BlueCon src={Box}/> 
-               <Shad1Con  src={Shad1}/>
-
-               <SolidCon src={Solid}/>  */}
-
-
                </Con>
             </Div2>
         </Container>
