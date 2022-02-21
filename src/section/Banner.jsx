@@ -1,10 +1,10 @@
 import React from 'react';
-import Coin from '../assets/coin.png';
 import { Column, Container, Typography } from '../GlobalStyle.style';
 import { BannerWrapper, ImageWrapper } from '../styles/Banner.style';
 import Image from '../components/Image';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
+import { Bg_coin } from '../assets';
 
 const Banner = () => {
   return (
@@ -44,7 +44,7 @@ const Banner = () => {
           </Column>
           <Column>
             <ImageWrapper>
-              <Image img={Coin} alt="3swap" />
+              <Image img={Bg_coin} alt="3swap" />
             </ImageWrapper>
           </Column>
         </BannerWrapper>
