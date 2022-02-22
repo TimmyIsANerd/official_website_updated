@@ -5,7 +5,7 @@ const StyledLink = styled(Link)`
   display: flex;
   font-weight: 500;
   span {
-    margin: 0 8px;
+    margin: 0 2px;
     display: flex;
     align-items: center;
   }

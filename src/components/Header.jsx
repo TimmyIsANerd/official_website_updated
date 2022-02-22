@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../GlobalStyle.style';
@@ -51,17 +50,60 @@ export const NavLogo = styled.div`
     padding-left: 20px;
   }
 `;
-const MobileIcon = styled.div`
-  display: none;
 
+const Toggle = styled.div`
+  display: none;
   @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    overflow: hidden;
+
+    span {
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      left: 8px;
+      background: #1863ff;
+      border-radius: 3px;
+      transition: 0.5s;
+      &:nth-child(1) {
+        transform: translateY(-8px);
+        width: 15px;
+        left: 8px;
+      }
+      &:nth-child(2) {
+        transform: translateY(8px);
+        width: 10px;
+        left: 8px;
+      }
+    }
+    &.active {
+      span {
+        &:nth-child(3) {
+          transform: translateX(40px);
+        }
+        &:nth-child(1) {
+          width: 25px;
+          transform: translateY(0px) rotate(45deg);
+          transition-delay: 0.125s;
+        }
+        &:nth-child(2) {
+          width: 25px;
+          transform: translateY(0px) rotate(315deg);
+          transition-delay: 0.25s;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 480px) {
   }
 `;
 const NavMenu = styled.ul`
@@ -119,6 +161,18 @@ const NavItem = styled.li`
   }
 `;
 
+const MenuIcon = styled.div`
+  display: none;
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    display: flex;
+  }
+  //iPad 768x1024
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    margin-right: 30px;
+    display: flex;
+  }
+`;
+
 const Header = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -137,9 +191,13 @@ const Header = () => {
               <Image src={Logo} alt="logo" />
             </Link>
           </NavLogo>
-          <MobileIcon onClick={handleClick}>
-            {click ? <FaTimes /> : <FaBars />}
-          </MobileIcon>
+          <MenuIcon>
+            <Toggle className={click && 'active'} onClick={handleClick}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </Toggle>
+          </MenuIcon>
           <NavMenu onClick={handleClick} click={click}>
             <NavItem>
               <NavLink url="/" label="About Us" />

@@ -14,7 +14,7 @@ import { DemoAppContainer } from '../styles/App.style';
 
 const Demo = () => {
   const [open, setOpen] = useState(false);
-  const [complete, setComplete] = useState(true);
+  const [complete, setComplete] = useState(false);
 
   return (
     <>
@@ -23,7 +23,7 @@ const Demo = () => {
         <GetCode setOpen={setOpen} setComplete={setComplete} />
       </Modal>
       {/* Confirmation Modal */}
-      <Modal open={complete} height="auto" bg="rgba(255,255,255,0.9)">
+      <Modal open={complete} height="auto" bg="rgba(255,255,255,0.3)">
         <Confirmation setComplete={setComplete} />
       </Modal>
 

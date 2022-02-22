@@ -2,12 +2,15 @@ import React from 'react';
 import { Typography } from '../GlobalStyle.style';
 import styled from 'styled-components';
 import Button from '../components/Button';
-
+import { Bg_form } from '../assets';
 const ConfirmationWrapper = styled.div`
   padding: 50px;
   justify-content: center;
   text-align: center;
   align-items: center;
+  background: url(${Bg_form}) no-repeat;
+  background-size: contain;
+  background-position: bottom;
 
   ${Typography} {
     &:nth-child(1) {
@@ -31,7 +34,13 @@ const Confirmation = ({ setComplete }) => {
   return (
     <>
       <ConfirmationWrapper onClick={() => setComplete(false)}>
-        <Typography as="h1" color="#000" textAlign="center">
+        <Typography
+          as="h1"
+          color="#000"
+          textAlign="center"
+          fontSize="21px"
+          lineHeight="24px"
+        >
           Welcome to the Family
         </Typography>
         <Typography
@@ -39,8 +48,15 @@ const Confirmation = ({ setComplete }) => {
           color="color: rgba(0, 0, 0, 0.65)"
           lineHeight="24px"
         />
-        <Typography as="p" color="rgba(0,0,0,0.65)" lineHeight="24px">
-          Check you email for the testing code
+        <Typography
+          as="p"
+          color="#fff"
+          lineHeight="24px"
+          fontSize="16px"
+          textAlign="center"
+          margin="20px 0 !important"
+        >
+          Please check you email inbox or junk box for the testing code.
         </Typography>
         <ButtonWrapper>
           <Button

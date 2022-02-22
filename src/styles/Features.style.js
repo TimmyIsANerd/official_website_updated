@@ -124,13 +124,26 @@ export const FeatureHeading = styled.div`
     margin-bottom: 40px;
 
     a {
-      font-size: 40px;
+      font-size: 25px;
       margin-right: 8px;
-      color: rgba(0, 0, 0, 0.3);
+      color: rgba(0, 0, 0, 0.5);
+      /* padding: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%; */
+      display: flex;
+      align-items: center;
       transition: all 0.5s ease;
+
       &:hover {
-        color: rgba(0, 0, 0, 1);
+        color: rgba(0, 0, 0, 0.8);
+        /* background: rgba(0, 0, 0, 0.8); */
         transition: all 0.3s ease;
+      }
+      @media screen and (min-width: 320px) and (max-width: 480px) {
+        /* padding: 3px;
+        width: 40px;
+        height: 40px; */
       }
     }
   }

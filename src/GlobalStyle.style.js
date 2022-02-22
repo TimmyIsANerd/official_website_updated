@@ -7,15 +7,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing:border-box;
     -webkit-tap-highlight-color:rgba(0,0,0,0) !important;
   }
-  @font-face {
-   font-family: "Kinn";
-   src:local("/Kinn-Bold.otf");
-   /* src: local('Kinn'),url("./assets/fonts/Kinn-Bold.ttf") format("tff");
-   src: local('Kinn'),url("./assets/fonts/Kinn-Medium.otf") format("otf");
-   src: local('Kinn'),url("./assets/fonts/Kinn-Medium.ttf") format("tff");
-   src: local('Kinn'),url("./assets/fonts/Kinn-Regular.otf") format("oft");
-   src: local('Kinn'),url("./assets/fonts/Kinn-Regular.ttf") format("tff"); */
-};
+
   :root{
     --primary-bg:#4500A0;
     --text-bg:#121E49;

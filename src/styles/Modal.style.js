@@ -8,9 +8,9 @@ export const ModalBackdrop = styled(motion.div)`
   top: 0;
   left: 0;
   display: flex;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(3px);
   background: rgba(0, 0, 0, 0.6);
-  z-index: 999;
+  z-index: 10;
 `;
 
 export const ModalContentWrapper = styled(motion.div)`

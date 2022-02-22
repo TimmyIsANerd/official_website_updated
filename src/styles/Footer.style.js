@@ -34,14 +34,37 @@ export const FooterWrapper = styled.div`
     }
   }
   @media screen and (max-width: 480px) {
+    flex-direction: column;
+    margin-left: 10px;
+    ${Column} {
+      flex-direction: column;
+    }
     a {
-      font-size: 10px;
+      font-size: 16px;
       font-weight: 600;
       color: #000;
-
+      margin: 10px 0;
       &:hover {
         color: rgba(0, 0, 0, 0.8);
       }
+      &::after {
+        display: none;
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    ${Column} {
+      margin-left: 25px;
+    }
+    a {
+      font-size: 18px;
+      color: #000;
     }
   }
 `;
