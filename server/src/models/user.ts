@@ -11,7 +11,6 @@ const userSchema = new Schema(
     },
     full_name: {
       type: String,
-      min: 5,
       required: true,
     },
     test_code: {

@@ -30,7 +30,7 @@ const ButtonWrapper = styled.div`
 const Confirmation = ({ setComplete }) => {
   return (
     <>
-      <ConfirmationWrapper>
+      <ConfirmationWrapper onClick={() => setComplete(false)}>
         <Typography as="h1" color="#000" textAlign="center">
           Welcome to the Family
         </Typography>

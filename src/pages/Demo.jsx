@@ -14,13 +14,13 @@ import { DemoAppContainer } from '../styles/App.style';
 
 const Demo = () => {
   const [open, setOpen] = useState(false);
-  const [complete, setComplete] = useState(false);
+  const [complete, setComplete] = useState(true);
 
   return (
     <>
       {/* Get Test Code Modal */}
       <Modal open={open} width="800px" height="auto" bg="rgba(255,255,255,0.9)">
-        <GetCode setOpen={setOpen} />
+        <GetCode setOpen={setOpen} setComplete={setComplete} />
       </Modal>
       {/* Confirmation Modal */}
       <Modal open={complete} height="auto" bg="rgba(255,255,255,0.9)">

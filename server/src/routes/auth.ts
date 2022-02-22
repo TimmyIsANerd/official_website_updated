@@ -7,19 +7,29 @@ const router = express.Router();
 router.post(
   '/signup',
   body('email').isEmail().withMessage('Please enter a valid email address'),
-  body('full_name')
-    .isLength({ min: 5 })
-    .withMessage('Your name should contain a minimum of 5 characters'),
   async (req: express.Request, res: express.Response) => {
     // get error messages
     const validationErrors = validationResult(req);
 
     // check if validationErrors is Empty
     if (!validationErrors.isEmpty()) {
-      return res.status(400).json({ errors: validationErrors.array() });
+      const errors = validationErrors.array().map((error) => {
+        return {
+          msg: error.msg,
+        };
+      });
+      return res.status(400).json({ errors, data: null });
     }
     // get form data
     const { full_name, email } = req.body;
+    if (full_name.length < 5) {
+      return res.json({
+        errors: [
+          { msg: 'your name should contain a minimum of 5 characters.' },
+        ],
+        data: null,
+      });
+    }
     //get record
     const user = await User.findOne({ email }); // returns null if there is no email in DB
     //  check if email adready exist
@@ -30,7 +40,7 @@ router.post(
       });
     }
     // generate random test code
-    const test_code = Math.random().toString(36).substring(2, 7);
+    const test_code = Math.random().toString(36).substring(2, 7).toUpperCase();
     //  create new record
     const newUser = await User.create({ email, full_name, test_code });
     // email test code to user's email address
@@ -47,8 +57,8 @@ router.post(
     sgMail
       .send(msg)
       .then(() => {
-        res.status(200).json({
-          status: 'successfull',
+        res.status(201).json({
+          errors: [],
           data: {
             msg: 'Please check your inbox/spam box for the test code.',
             user: {
@@ -66,4 +76,9 @@ router.post(
   }
 );
 
+router.post('/verify', async (req: express.Request, res: express.Response) => {
+  res.status(200).json({
+    msg: 'success',
+  });
+});
 export default router;

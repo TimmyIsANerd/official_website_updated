@@ -49,7 +49,12 @@ export const GetCodeContainer = styled.div`
     width: 100%;
   }
 `;
-
+export const Error = styled.p`
+  color: red;
+  font-weight: 600;
+  margin: 8px 0;
+  font-size: 14px;
+`;
 export const GetCodeForm = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,8 +63,8 @@ export const GetCodeForm = styled.div`
   align-items: center;
   position: relative;
   input {
-    margin: 10px 0;
-    font-size: 16px;
+    margin: 5px 0;
+    font-size: 14px;
   }
   @media screen and (max-width: 480px) {
     input {
@@ -69,10 +74,15 @@ export const GetCodeForm = styled.div`
   button {
     margin-top: 10px;
   }
+  button:disabled,
+  button[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
   .closeBtn {
     cursor: pointer;
     position: absolute;
-    top: -120px;
+    top: -70px;
     right: 30px;
     .icon {
       font-size: 30px;
