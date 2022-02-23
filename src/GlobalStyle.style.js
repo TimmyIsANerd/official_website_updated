@@ -22,6 +22,11 @@ a{
   text-decoration: none;
   font-family: 'Poppins',sans-serif;
 }
+button:disabled,
+  button[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
 `;
 
 export const Container = styled.div`

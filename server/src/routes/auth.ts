@@ -83,7 +83,7 @@ router.post('/verify', async (req: express.Request, res: express.Response) => {
 
     // check if test code is provided
     if (!test_code) {
-      return res.status(400).json({
+      return res.json({
         errors: [{ msg: 'Please enter a test code.' }],
         data: null,
       });
@@ -92,7 +92,7 @@ router.post('/verify', async (req: express.Request, res: express.Response) => {
     // check if code exist in DB
     const user = await User.findOne({ test_code });
     if (!user) {
-      return res.status(400).json({
+      return res.json({
         errors: [{ msg: 'Invalid test code.' }],
         data: null,
       });

@@ -74,11 +74,7 @@ export const GetCodeForm = styled.div`
   button {
     margin-top: 10px;
   }
-  button:disabled,
-  button[disabled] {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
+
   .closeBtn {
     cursor: pointer;
     position: absolute;

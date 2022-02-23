@@ -8,7 +8,6 @@ import { Column, Typography } from '../GlobalStyle.style';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import {
-  Error,
   GetCodeContainer,
   GetCodeForm,
   GetCodeWrapper,
@@ -23,7 +22,6 @@ const GetCode = ({ setOpen, setComplete }) => {
   const [errorMsg, setErrorMsg] = useState('');
 
   const handleSubmit = async (e) => {
-    let data;
     try {
       e.preventDefault();
       setIsLoading(true);
@@ -33,16 +31,13 @@ const GetCode = ({ setOpen, setComplete }) => {
         return false;
       }
 
-      const { data: response } = await axios.post(
-        'http://localhost:8080/auth/signup',
-        {
-          full_name: name,
-          email,
-        }
-      );
-      data = response;
-      if (data.errors.length) {
+      const { data } = await axios.post('/auth/signup', {
+        full_name: name,
+        email,
+      });
+      if (data.errors.length > 0) {
         setErrorMsg(data.errors[0].msg);
+        MySwal.fire('Error Occured.', `${errorMsg}`, 'error');
         setIsLoading(false);
       } else {
         setEmail('');
@@ -109,7 +104,6 @@ const GetCode = ({ setOpen, setComplete }) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              {errorMsg ? <Error>{errorMsg}</Error> : ''}
               <Button
                 label="Get test code"
                 bgColor="var(--primary-bg)"

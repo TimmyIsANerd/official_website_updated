@@ -10,12 +10,39 @@ import { Container, Typography } from '../GlobalStyle.style';
 import Confirmation from '../screens/Confirmation';
 import GetCode from '../screens/GetCode';
 import Logo from '../assets/logo_1.png';
+import Swal from 'sweetalert2';
+import axios from 'axios';
+import withReactContent from 'sweetalert2-react-content';
 import { DemoAppContainer } from '../styles/App.style';
+const MySwal = withReactContent(Swal);
 
 const Demo = () => {
   const [open, setOpen] = useState(false);
   const [complete, setComplete] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [testCode, setTestCode] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      !testCode &&
+        MySwal.fire('Empty Field!!!', 'Please enter your test code', 'error');
+      setLoading(true);
+      const { data } = await axios.post('/auth/verify', {
+        test_code: testCode,
+      });
+
+      if (data.errors.length > 0) {
+        setErrorMsg(data.errors[0].msg);
+        MySwal.fire('Error Occured.', `${errorMsg}`, 'error');
+        setLoading(false);
+      }
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       {/* Get Test Code Modal */}
@@ -51,6 +78,8 @@ const Demo = () => {
                 placeholder="Enter test code"
                 bgColor="rgba(255,255,255,0.9)"
                 textAlign="center"
+                value={testCode}
+                onChange={(e) => setTestCode(e.target.value)}
               />
             </div>
             <div className="button">
@@ -59,6 +88,8 @@ const Demo = () => {
                 bgColor="var(--primary-bg)"
                 color="#fff"
                 width="50%"
+                disabled={testCode.length < 1 || loading}
+                onClick={handleSubmit}
               />
             </div>
             <Typography
