@@ -21,8 +21,8 @@ const Demo = () => {
   const [complete, setComplete] = useState(false);
   const [loading, setLoading] = useState(false);
   const [testCode, setTestCode] = useState('');
-  const [errorMsg, setErrorMsg] = useState('');
 
+  let response;
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -32,13 +32,14 @@ const Demo = () => {
       const { data } = await axios.post('/auth/verify', {
         test_code: testCode,
       });
-
-      if (data.errors.length > 0) {
-        setErrorMsg(data.errors[0].msg);
-        MySwal.fire('Error Occured.', `${errorMsg}`, 'error');
+      response = data;
+      if (response.errors.length > 0) {
+        MySwal.fire('Error Occured.', `${response.errors[0].msg}`, 'error');
+        setLoading(false);
+      } else {
+        setComplete(true);
         setLoading(false);
       }
-      setLoading(false);
     } catch (error) {
       console.log(error);
     }
