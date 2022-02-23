@@ -19,7 +19,7 @@ app.use('/auth', authRoutes);
 // serve frontend
 if (process.env.NODE_ENV === 'production') {
   // set static folder
-  app.use(express.static(path.join(__dirname, './build')));
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
 
   app.get('*', (req, res) =>
     res.sendFile(
@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'production') {
     )
   );
 } else {
-  app.get('/', (req, res) => res.send('Please set to production'));
+  app.get('/', (req, res) => res.send('Please set development to production'));
 }
 // DB connection
 mongoose
