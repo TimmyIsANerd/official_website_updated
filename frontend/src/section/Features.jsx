@@ -18,7 +18,7 @@ const Features = () => {
   return (
     <>
       <FeatureWrapper>
-        <Container>
+        <Container >
           <Typography
             className="title"
             as="h2"

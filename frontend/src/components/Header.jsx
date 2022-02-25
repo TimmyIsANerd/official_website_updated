@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {HiMoon} from 'react-icons/hi'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../GlobalStyle.style';
@@ -173,10 +174,18 @@ const MenuIcon = styled.div`
   }
 `;
 
-const Header = () => {
+const Header = (props) => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const [isScrolled, setIsScrolled] = useState(false);
+  function changeTheme(){
+    if (props.theme === 'light'){
+      props.setTheme('dark')
+    }else {
+      props.setTheme('light');
+    }
+  }
+
 
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset <= 80 ? false : true);

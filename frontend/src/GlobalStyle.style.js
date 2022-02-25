@@ -1,5 +1,15 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
+
+export const lightTheme = {
+  body: '#ffff',
+  fontColor: '#0000'
+};
+export const darkTheme = {
+  body: '#0000',
+  fontColor: '#ffff'
+}
+
 const GlobalStyle = createGlobalStyle`
   *{
     margin:0;
@@ -35,6 +45,7 @@ export const Container = styled.div`
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
+  height: 100%;
 
   //Galaxy S9/S9+ 360x740 || iPhone 8, 7, 6S, 6 375x667
   @media screen and (min-width: 320px) and (max-width: 375px) {
@@ -70,4 +81,9 @@ export const Typography = styled.h1`
   font-family: ${(props) => (props.heading ? 'Kinn' : 'Poppins')}; ;
 `;
 
+
+
 export default GlobalStyle;
+
+
+
