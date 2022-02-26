@@ -5,7 +5,7 @@ const Toggle = styled.div`
   position: relative;
   width: 40px;
   height: 40px;
-  background: #fff;
+  background: #4500a0;
   /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); */
   border-radius: 5px;
   display: flex;
@@ -19,7 +19,7 @@ const Toggle = styled.div`
     width: 25px;
     height: 3px;
     left: 8px;
-    background: #1863ff;
+    background: #000;
     border-radius: 3px;
     transition: 0.5s;
     &:nth-child(1) {

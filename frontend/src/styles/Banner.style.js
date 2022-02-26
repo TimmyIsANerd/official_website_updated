@@ -53,8 +53,10 @@ export const BannerWrapper = styled.div`
         max-width: 35ch !important;
         margin: 5px 0 15px 0px;
         /* margin-top: -33px; */
-        font-size: 20px !important;
+        font-size: 16px !important;
         line-height: 30px !important;
+        color: #e0e0e0;
+        letter-spacing: 0.065em !important;
       }
       &:last-child {
         margin-top: -40px;
@@ -62,6 +64,11 @@ export const BannerWrapper = styled.div`
           width: 100%;
           height: 300px;
           object-fit: contain;
+        }
+      }
+      a {
+        button {
+          border-radius: 10px;
         }
       }
     }
@@ -83,8 +90,10 @@ export const BannerWrapper = styled.div`
         max-width: 30ch !important;
         margin: 5px 0 15px 5px;
         /* margin-top: -33px; */
-        font-size: 25px !important;
+        font-size: 16px !important;
         line-height: 30px !important;
+        color: #e0e0e0;
+        letter-spacing: 0.065em !important;
       }
       a {
         display: flex;
@@ -96,6 +105,11 @@ export const BannerWrapper = styled.div`
           width: 100%;
           height: 300px;
           object-fit: contain;
+        }
+      }
+      a {
+        button {
+          border-radius: 10px;
         }
       }
     }
@@ -115,9 +129,16 @@ export const BannerWrapper = styled.div`
         /* margin-top: -33px; */
         font-size: 26px !important;
         line-height: 30px !important;
+        color: #e0e0e0;
+        letter-spacing: 0.065em !important;
       }
       &:last-child {
         margin-top: -50px;
+      }
+      a {
+        button {
+          border-radius: 10px;
+        }
       }
     }
   }

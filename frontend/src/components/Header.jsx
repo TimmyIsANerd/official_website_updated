@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../GlobalStyle.style';
 import Logo from '../assets/logo_1.png';
+import Logo_Black from '../assets/logo.png';
 import Button from './Button';
 import NavLink from './NavLink';
 import Image from './Image';
@@ -57,7 +58,7 @@ const Toggle = styled.div`
     position: relative;
     width: 40px;
     height: 40px;
-    background: #fff;
+    background: #4500a0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     border-radius: 5px;
     display: flex;
@@ -71,7 +72,7 @@ const Toggle = styled.div`
       width: 25px;
       height: 3px;
       left: 8px;
-      background: #1863ff;
+      background: #fff;
       border-radius: 3px;
       transition: 0.5s;
       &:nth-child(1) {
@@ -81,8 +82,8 @@ const Toggle = styled.div`
       }
       &:nth-child(2) {
         transform: translateY(8px);
-        width: 10px;
-        left: 8px;
+        width: 15px;
+        left: 20px;
       }
     }
     &.active {
@@ -97,8 +98,8 @@ const Toggle = styled.div`
         }
         &:nth-child(2) {
           width: 25px;
-          transform: translateY(0px) rotate(315deg);
-          transition-delay: 0.25s;
+          transform: translateX(-12px) rotate(315deg);
+          transition-delay: 0.125s;
         }
       }
     }
@@ -188,7 +189,11 @@ const Header = () => {
         <NavbarContainer className={isScrolled ? 'scrolled' : ''}>
           <NavLogo>
             <Link to="/">
-              <Image src={Logo} alt="logo" />
+              {!isScrolled ? (
+                <Image src={Logo} alt="logo" />
+              ) : (
+                <Image src={Logo_Black} alt="logo" style={{ width: '120px' }} />
+              )}
             </Link>
           </NavLogo>
           <MenuIcon>
