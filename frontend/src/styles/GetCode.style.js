@@ -96,8 +96,7 @@ export const GetCodeForm = styled.div`
 
       .icon {
         font-size: 50px;
-        background: rgba(82, 128, 255, 0.05);
-        color: #fff;
+        color: #000;
         border-radius: 50%;
       }
     }

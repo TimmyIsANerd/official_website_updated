@@ -24,8 +24,11 @@ a{
 }
 button:disabled,
   button[disabled] {
-    background-color: #cccccc;
+    background-color: #000;
     cursor: not-allowed;
+  }
+  button:active{
+    background-color:#ccc
   }
 `;
 
