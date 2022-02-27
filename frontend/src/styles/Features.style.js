@@ -153,7 +153,7 @@ export const FeatureHeading = styled.div`
     width: 100%;
     margin-bottom: 20px;
     padding: 30px 10px;
-    h1 {
+    h4 {
       font-size: 30px;
       line-height: 40px;
       margin: 0px;
@@ -167,7 +167,7 @@ export const FeatureHeading = styled.div`
     width: 100%;
     margin-bottom: 20px;
     padding: 30px 20px;
-    h1 {
+    h4 {
       font-size: 35px;
       line-height: 40px;
       margin: 0px;
@@ -182,7 +182,7 @@ export const FeatureHeading = styled.div`
     margin: 0px auto;
     margin-bottom: 20px;
     padding: 30px 20px;
-    h1 {
+    h4 {
       line-height: 50px;
       margin: 0px;
       &::first-letter {

@@ -52,7 +52,8 @@ export const AboutWrapper = styled.div`
   //Galaxy S9/S9+ 360x740 || iPhone 8, 7, 6S, 6 375x667
   @media screen and (min-width: 320px) and (max-width: 375px) {
     flex-direction: column;
-    height: 100vh;
+    height: 110vh;
+    padding-bottom: 80px;
     ${Column} {
       h2 {
         margin-left: 2px;
@@ -61,7 +62,7 @@ export const AboutWrapper = styled.div`
       p {
         font-size: 14px;
       }
-      h1 {
+      h4 {
         font-size: 40px;
         line-height: 55px;
       }
@@ -81,7 +82,7 @@ export const AboutWrapper = styled.div`
   // 393x786 411x731 414x736
   @media screen and (min-width: 376px) and (max-width: 480px) {
     flex-direction: column;
-    height: 100vh;
+    height: 110vh;
     ${Column} {
       h2 {
         margin-left: 2px;
@@ -90,7 +91,7 @@ export const AboutWrapper = styled.div`
       p {
         font-size: 14px;
       }
-      h1 {
+      h4 {
         font-size: 40px;
         line-height: 55px;
       }
@@ -110,7 +111,7 @@ export const AboutWrapper = styled.div`
   //iPad 768x1024
   @media screen and (min-width: 481px) and (max-width: 768px) {
     flex-direction: column;
-    height: 80vh;
+    height: 100vh;
     width: 95%;
     margin: 0px auto;
     ${Column} {
@@ -123,7 +124,7 @@ export const AboutWrapper = styled.div`
         line-height: 30px;
         max-width: 100%;
       }
-      h1 {
+      h4 {
         font-size: 5rem !important;
         line-height: 80px;
       }
