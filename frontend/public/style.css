@@ -2,3 +2,7 @@
   font-family: 'Kinn';
   src: url('./Kinn-Bold.ttf');
 }
+* {
+  margin: 0px;
+  padding: 0px;
+}

@@ -1,22 +1,24 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    -webkit-tap-highlight-color:rgba(0,0,0,0) !important;
-  }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:rgba(0,0,0,0) !important;
+}
 
-  :root{
+:root{
     --primary-bg:#4500A0;
     --text-bg:#121E49;
     --text-bg-p:#1F1F1F
-  }
-  body {
+}
+body {
   margin: 0;
   font-family: 'Poppins','Kinn' sans-serif;
-  background: whitesmoke;
+  transition: all 0.5s ease;
+  background: ${({ theme }) => theme.body};
+  color:${({ theme }) => theme.text};
 }
 a{
   text-decoration: none;
@@ -26,12 +28,20 @@ button:disabled,
   button[disabled] {
     background-color: #000;
     cursor: not-allowed;
-  }
-  button:active{
-    background-color:#ccc
-  }
+}
+button:active{
+  background-color:#ccc
+}
 `;
+export const lightTheme = {
+  body: '#fff',
+  text: '#121212',
+};
 
+export const darkTheme = {
+  body: '#0e0020',
+  text: '#fff',
+};
 export const Container = styled.div`
   z-index: 1;
   width: 100%;

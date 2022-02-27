@@ -7,6 +7,7 @@ import Logo_Black from '../assets/logo.png';
 import Button from './Button';
 import NavLink from './NavLink';
 import Image from './Image';
+import ToggleDarkMode from './Toggle';
 
 const Nav = styled.nav`
   /* background: #101522; */
@@ -183,6 +184,7 @@ const Header = () => {
     setIsScrolled(window.pageYOffset <= 80 ? false : true);
     return () => (window.onscroll = null);
   };
+
   return (
     <>
       <Nav>
@@ -224,6 +226,7 @@ const Header = () => {
                 />
               </Link>
             </NavItem>
+            <ToggleDarkMode />
           </NavMenu>
         </NavbarContainer>
       </Nav>
