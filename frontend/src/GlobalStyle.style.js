@@ -52,7 +52,8 @@ export const lightTheme = {
   subheading: '#4500A0',
   paragraph: 'rgba(31, 31, 31, 0.7)',
   button: '#000000',
-
+  toggleBtn: '#fff',
+  toggleBtnColor: 'var(--primary-bg)',
   feature: {
     background:
       'linear-gradient(175.58deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.27) 99.87%);',
@@ -61,6 +62,8 @@ export const lightTheme = {
   footer: {
     color: 'rgba(18, 30, 73, 0.5) !important',
   },
+  gradient: 'linear-gradient(#39598A, #79D7ED)',
+  toggleBorder: '#6B8096',
 };
 
 export const darkTheme = {
@@ -71,7 +74,8 @@ export const darkTheme = {
   subheading: 'rgba(242, 242, 242, 0.9)',
   paragraph: 'rgba(255, 255, 255, 0.75)',
   button: '#4500A0',
-
+  toggleBtn: 'var(--primary-bg)',
+  toggleBtnColor: '#fff',
   feature: {
     background:
       'linear-gradient(175.58deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.2) 99.87%)',
@@ -80,6 +84,8 @@ export const darkTheme = {
   footer: {
     color: 'rgba(255, 255, 255, 0.8) !important',
   },
+  gradient: 'linear-gradient(#39598A, #79D7ED)',
+  toggleBorder: '#6B8096',
 };
 export const Container = styled.div`
   z-index: 1;

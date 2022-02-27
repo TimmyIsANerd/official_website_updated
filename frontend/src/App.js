@@ -6,11 +6,14 @@ import GlobalStyle, { lightTheme, darkTheme } from './GlobalStyle.style';
 import { ThemeProvider } from 'styled-components';
 import { useDarkMode } from './hooks/useDarkMode';
 
-export const DarkModeContext = createContext('light');
+export const DarkModeContext = createContext(
+  window.localStorage.getItem('theme') || 'light'
+);
 
 function App() {
   const [theme, toggleTheme] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
   return (
     <ThemeProvider theme={themeMode}>
       <DarkModeContext.Provider value={{ theme, toggleTheme }}>
