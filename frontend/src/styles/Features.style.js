@@ -48,12 +48,12 @@ export const FeaturesWrapper = styled.div`
 
   ${Column} {
     .feature {
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      border: 1px solid ${({ theme }) => theme.feature.border};
       min-height: 140px;
       margin-bottom: 15px;
       padding: 20px 30px;
       border-radius: 15px;
-      background: rgba(255, 255, 255, 0.3);
+      background: ${({ theme }) => theme.feature.background};
       p {
         max-width: 40ch;
       }
@@ -101,10 +101,10 @@ export const FeatureHeading = styled.div`
   padding: 30px 40px;
   border-radius: 30px;
   margin-right: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid ${({ theme }) => theme.feature.border};
   box-sizing: border-box;
   position: relative;
-  background: rgba(255, 255, 255, 0.2);
+  background: ${({ theme }) => theme.feature.background};
 
   border-radius: 15px;
   h1 {

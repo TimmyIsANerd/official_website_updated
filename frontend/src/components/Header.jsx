@@ -128,7 +128,7 @@ const NavMenu = styled.ul`
     opacity: 1;
     z-index: 9999;
     transition: all 0.5s ease;
-    background: rgba(255, 255, 255, 1);
+    background: ${({ theme }) => theme.body};
   }
 `;
 const NavItem = styled.li`

@@ -34,7 +34,7 @@ const Features = () => {
             <Column flex="0.6">
               <FeatureHeading>
                 <Typography
-                  as="h1"
+                  as="h4"
                   fontSize="50px"
                   lineHeight="120%"
                   heading
@@ -64,7 +64,7 @@ const Features = () => {
               <div className="feature">
                 <span>
                   <Typography
-                    as="h2"
+                    as="h3"
                     fontSize="16px"
                     lineHeight="31px"
                     fontWeight="600"
@@ -88,7 +88,7 @@ const Features = () => {
               <div className="feature">
                 <span>
                   <Typography
-                    as="h2"
+                    as="h3"
                     fontSize="16px"
                     lineHeight="31px"
                     fontWeight="600"
@@ -112,7 +112,7 @@ const Features = () => {
               <div className="feature">
                 <span>
                   <Typography
-                    as="h2"
+                    as="h3"
                     fontSize="16px"
                     lineHeight="31px"
                     fontWeight="600"

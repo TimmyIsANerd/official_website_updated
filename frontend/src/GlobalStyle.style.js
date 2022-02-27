@@ -18,7 +18,18 @@ body {
   font-family: 'Poppins','Kinn' sans-serif;
   transition: all 0.5s ease;
   background: ${({ theme }) => theme.body};
-  color:${({ theme }) => theme.text};
+}
+h4,h3{
+  color:${({ theme }) => theme.heading}
+}
+h1{
+  color:${({ theme }) => theme.headingLight}
+}
+h2{
+  color:${({ theme }) => theme.headingSmall}
+}
+p{
+  color:${({ theme }) => theme.paragraph}
 }
 a{
   text-decoration: none;
@@ -35,12 +46,40 @@ button:active{
 `;
 export const lightTheme = {
   body: '#fff',
-  text: '#121212',
+  heading: '#4500A0',
+  headingLight: '#fff',
+  headingSmall: '#121E49',
+  subheading: '#4500A0',
+  paragraph: 'rgba(31, 31, 31, 0.7)',
+  button: '#000000',
+
+  feature: {
+    background:
+      'linear-gradient(175.58deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.27) 99.87%);',
+    border: '#000000',
+  },
+  footer: {
+    color: 'rgba(18, 30, 73, 0.5) !important',
+  },
 };
 
 export const darkTheme = {
   body: '#0e0020',
-  text: '#fff',
+  headingLight: '#F2F2F2',
+  heading: 'rgba(255,255,255,0.9)',
+  headingSmall: 'rgba(242, 242, 242, 0.9)',
+  subheading: 'rgba(242, 242, 242, 0.9)',
+  paragraph: 'rgba(255, 255, 255, 0.75)',
+  button: '#4500A0',
+
+  feature: {
+    background:
+      'linear-gradient(175.58deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.2) 99.87%)',
+    border: '#F2F2F2',
+  },
+  footer: {
+    color: 'rgba(255, 255, 255, 0.8) !important',
+  },
 };
 export const Container = styled.div`
   z-index: 1;
@@ -78,7 +117,6 @@ export const Typography = styled.h1`
     props.letterSpacing ? props.letterSpacing : ''};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-style: ${(props) => (props.fontStyle ? props.fontStyle : 'normal')};
-  color: ${(props) => (props.color ? props.color : '#121212')};
   margin: ${(props) => (props.margin ? props.margin : '')};
   font-family: ${(props) => (props.heading ? 'Kinn' : 'Poppins')}; ;
 `;

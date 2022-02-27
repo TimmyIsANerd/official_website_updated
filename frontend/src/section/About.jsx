@@ -20,7 +20,7 @@ const About = () => {
               About Us
             </Typography>
             <Typography
-              as="h1"
+              as="h4"
               fontSize="60px"
               fontWeght="bold"
               lineHeight="61px"
