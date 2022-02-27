@@ -12,6 +12,13 @@ const Button = styled.button`
   display: flex;
   cursor: pointer;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    padding: 13px;
+    margin-left: 5px;
+  }
+  @media screen and (min-width: 481px) and (max-width: 769px) {
+    margin-right: 20px;
+  }
 `;
 const ToggleDarkMode = () => {
   const { theme, toggleTheme } = useContext(DarkModeContext);

@@ -13,7 +13,7 @@ const Nav = styled.nav`
   /* background: #101522; */
   height: 80px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   z-index: 9999;
 `;
@@ -24,6 +24,13 @@ const NavbarContainer = styled(Container)`
   justify-content: space-between;
   height: 80px;
   transition: all 0.3s ease;
+
+  .container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+  }
   //Galaxy S9/S9+ 360x740 || iPhone 8, 7, 6S, 6 375x667
   @media screen and (min-width: 320px) and (max-width: 375px) {
     &.scrolled {
@@ -198,36 +205,38 @@ const Header = () => {
               )}
             </Link>
           </NavLogo>
-          <MenuIcon>
-            <Toggle className={click && 'active'} onClick={handleClick}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </Toggle>
-          </MenuIcon>
-          <NavMenu onClick={handleClick} click={click}>
-            <NavItem>
-              <NavLink url="/" label="About Us" />
-            </NavItem>
-            <NavItem>
-              <NavLink url="/" label="Features" />
-            </NavItem>
-            <NavItem>
-              <NavLink url="/" label="White paper" />
-            </NavItem>
-            <NavItem>
-              <Link to="/app">
-                <Button
-                  label="Launch App"
-                  borderRadius="0px"
-                  color="#fff"
-                  bgColor="#000"
-                  margin="0px 10px"
-                />
-              </Link>
-            </NavItem>
+          <div className="container">
+            <MenuIcon>
+              <Toggle className={click && 'active'} onClick={handleClick}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </Toggle>
+            </MenuIcon>
+            <NavMenu onClick={handleClick} click={click}>
+              <NavItem>
+                <NavLink url="/" label="About Us" />
+              </NavItem>
+              <NavItem>
+                <NavLink url="/" label="Features" />
+              </NavItem>
+              <NavItem>
+                <NavLink url="/" label="White paper" />
+              </NavItem>
+              <NavItem>
+                <Link to="/app">
+                  <Button
+                    label="Launch App"
+                    borderRadius="0px"
+                    color="#fff"
+                    bgColor="#000"
+                    margin="0px 10px"
+                  />
+                </Link>
+              </NavItem>
+            </NavMenu>
             <ToggleDarkMode />
-          </NavMenu>
+          </div>
         </NavbarContainer>
       </Nav>
     </>
