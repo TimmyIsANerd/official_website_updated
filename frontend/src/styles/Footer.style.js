@@ -41,8 +41,8 @@ export const FooterWrapper = styled.div`
     }
     a {
       font-size: 16px;
-      font-weight: 600;
-      color: #000;
+      font-weight: 800;
+      color: ${({ theme }) => theme.footer.color};
       margin: 10px 0;
       &:hover {
         color: rgba(0, 0, 0, 0.8);

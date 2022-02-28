@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Column, Container, Typography } from '../GlobalStyle.style';
 import { AboutWrapper } from '../styles/About.style';
+import { DarkModeContext } from '../App';
 import Bar from '../assets/bar.png';
 import Image from '../components/Image';
+import { Bg_candle_2 } from '../assets';
 
 const About = () => {
+  const { theme } = useContext(DarkModeContext);
   return (
     <>
       <Container>
@@ -43,7 +46,11 @@ const About = () => {
             </Typography>
           </Column>
           <Column>
-            <Image src={Bar} alt="coin" />
+            {theme === 'light' ? (
+              <Image src={Bar} alt="coin" />
+            ) : (
+              <Image src={Bg_candle_2} alt="coin" />
+            )}
           </Column>
         </AboutWrapper>
       </Container>

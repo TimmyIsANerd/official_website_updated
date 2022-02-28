@@ -75,6 +75,7 @@ export const AboutWrapper = styled.div`
         img {
           height: 300px;
           position: relative;
+          margin: 40px 0px;
         }
       }
     }
@@ -104,6 +105,7 @@ export const AboutWrapper = styled.div`
         img {
           height: 300px;
           position: relative;
+          margin: 40px 0px;
         }
       }
     }
@@ -137,6 +139,7 @@ export const AboutWrapper = styled.div`
         img {
           height: 400px;
           position: relative;
+          margin: 40px 0px;
         }
       }
     }

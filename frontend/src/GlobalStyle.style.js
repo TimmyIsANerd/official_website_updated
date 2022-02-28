@@ -40,9 +40,6 @@ button:disabled,
     background-color: #000;
     cursor: not-allowed;
 }
-button:active{
-  background-color:#ccc
-}
 `;
 export const lightTheme = {
   body: '#fff',
@@ -53,14 +50,18 @@ export const lightTheme = {
   paragraph: 'rgba(31, 31, 31, 0.7)',
   button: '#000000',
   toggleBtn: '#fff',
-  toggleBtnColor: 'var(--primary-bg)',
+  toggleBtnColor: '#fff',
   feature: {
     background:
       'linear-gradient(175.58deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.27) 99.87%);',
     border: '#000000',
   },
   footer: {
-    color: 'rgba(18, 30, 73, 0.5) !important',
+    color: 'rgba(0, 0, 0, 1) !important',
+  },
+  getCode: {
+    heading: '',
+    paragraph: '',
   },
   gradient: 'linear-gradient(#39598A, #79D7ED)',
   toggleBorder: '#6B8096',
@@ -82,7 +83,11 @@ export const darkTheme = {
     border: '#F2F2F2',
   },
   footer: {
-    color: 'rgba(255, 255, 255, 0.8) !important',
+    color: 'rgba(255, 255, 255, 1) !important',
+  },
+  getCode: {
+    heading: '#121E49',
+    paragraph: 'rgba(31,31,31,0.7)',
   },
   gradient: 'linear-gradient(#39598A, #79D7ED)',
   toggleBorder: '#6B8096',

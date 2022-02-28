@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Bg from '../assets/get_code_bg.svg';
-import { Column } from '../GlobalStyle.style';
+import { Column, Typography } from '../GlobalStyle.style';
 
 export const GetCodeWrapper = styled.div`
   display: flex;
@@ -23,6 +23,10 @@ export const GetCodeContainer = styled.div`
       margin-right: 10px;
       padding: 20px 30px;
       position: relative;
+
+      ${Typography} {
+        color: ${({ theme }) => theme.getCode.heading};
+      }
       img {
         float: right;
         width: 150px;
@@ -42,6 +46,9 @@ export const GetCodeContainer = styled.div`
       align-items: center;
       text-align: center;
       width: 100%;
+      ${Typography} {
+        color: ${({ theme }) => theme.getCode.heading};
+      }
     }
   }
   @media screen and (max-width: 480px) {
@@ -80,25 +87,31 @@ export const GetCodeForm = styled.div`
     position: absolute;
     top: -70px;
     right: 30px;
+    padding: 20px 0 !important;
     .icon {
-      font-size: 30px;
-      color: rgba(0, 0, 0, 0.3);
+      font-size: 30px !important;
+      color: #000 !important;
       transition: all 0.5s ease-in-out;
       &:hover {
         color: rgba(0, 0, 0, 0.9);
         transition: all 0.5s ease-in;
       }
     }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 400px) {
       top: -260px;
       position: relative;
       right: -135px;
-
       .icon {
         font-size: 50px;
         color: #000;
         border-radius: 50%;
       }
+    }
+    @media screen and (min-width: 401px) and (max-width: 480px) {
+      top: -230px;
+      right: 10px;
+
+      padding: 20px 0 !important;
     }
   }
 `;

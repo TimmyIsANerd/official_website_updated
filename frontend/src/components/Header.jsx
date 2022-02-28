@@ -35,13 +35,22 @@ const NavbarContainer = styled(Container)`
   @media screen and (min-width: 320px) and (max-width: 375px) {
     &.scrolled {
       background: #fff;
+      transition: all 0.3s ease;
+      .icon {
+        color: var(--primary-bg);
+      }
     }
+
     position: fixed;
   }
   // 393x786 411x731 414x736
   @media screen and (min-width: 376px) and (max-width: 480px) {
     &.scrolled {
       background: #fff;
+      transition: all 0.3s ease;
+      .icon {
+        color: var(--primary-bg);
+      }
     }
     position: fixed;
   }
@@ -49,6 +58,10 @@ const NavbarContainer = styled(Container)`
   @media screen and (min-width: 481px) and (max-width: 768px) {
     &.scrolled {
       background: #fff;
+      transition: all 0.3s ease;
+      .icon {
+        color: var(--primary-bg);
+      }
     }
     position: fixed;
   }
@@ -68,7 +81,7 @@ const Toggle = styled.div`
     height: 40px;
     background: #4500a0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    border-radius: 5px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,7 +90,7 @@ const Toggle = styled.div`
 
     span {
       position: absolute;
-      width: 25px;
+      width: 22px;
       height: 3px;
       left: 8px;
       background: #fff;
@@ -85,13 +98,13 @@ const Toggle = styled.div`
       transition: 0.5s;
       &:nth-child(1) {
         transform: translateY(-8px);
-        width: 15px;
+        width: 13px;
         left: 8px;
       }
       &:nth-child(2) {
         transform: translateY(8px);
         width: 15px;
-        left: 20px;
+        left: 18px;
       }
     }
     &.active {
@@ -106,7 +119,7 @@ const Toggle = styled.div`
         }
         &:nth-child(2) {
           width: 25px;
-          transform: translateX(-12px) rotate(315deg);
+          transform: translateX(-10px) rotate(315deg);
           transition-delay: 0.125s;
         }
       }
