@@ -20,7 +20,8 @@ const Button = styled.button`
     margin-left: 5px;
 
     .icon {
-      font-size: 40px;
+      font-size: 30px;
+      margin-left: 5px;
     }
   }
   @media screen and (min-width: 481px) and (max-width: 769px) {
