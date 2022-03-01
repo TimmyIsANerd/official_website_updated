@@ -161,6 +161,8 @@ const NavItem = styled.li`
     text-decoration: none;
     padding: 0.5rem 1rem;
     height: 100%;
+    font-weight: 500;
+    color: ${({ theme }) => theme.footer.color};
 
     @media screen and (max-width: 768px) {
       text-align: center;
@@ -207,7 +209,7 @@ const Header = () => {
 
   return (
     <>
-      <Nav>
+      <Nav id="banner">
         <NavbarContainer className={isScrolled ? 'scrolled' : ''}>
           <NavLogo>
             <Link to="/">
@@ -228,13 +230,29 @@ const Header = () => {
             </MenuIcon>
             <NavMenu onClick={handleClick} click={click}>
               <NavItem>
-                <NavLink url="/" label="About Us" />
+                <NavLink
+                  url="about"
+                  label="About Us"
+                  onClick={handleClick}
+                  smooth={true}
+                  spy={true}
+                  exact="true"
+                  duration={500}
+                />
               </NavItem>
               <NavItem>
-                <NavLink url="/" label="Features" />
+                <NavLink
+                  url="features"
+                  label="Features"
+                  onClick={handleClick}
+                  smooth={true}
+                  spy={true}
+                  exact="true"
+                  duration={500}
+                />
               </NavItem>
               <NavItem>
-                <NavLink url="/" label="White paper" />
+                <Link to="/">White paper</Link>
               </NavItem>
               <NavItem>
                 <Link to="/app">

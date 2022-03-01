@@ -6,13 +6,15 @@ import styled from 'styled-components';
 const Button = styled.button`
   background: transparent;
   color: ${({ theme }) => theme.toggleBtnColor};
-  padding: 8px;
   border-radius: 5px;
   outline: none;
   border: none;
   display: flex;
   cursor: pointer;
   align-items: center;
+  .icon {
+    font-size: 25px;
+  }
   @media screen and (max-width: 768px) {
     padding: 0px;
     margin-left: 5px;

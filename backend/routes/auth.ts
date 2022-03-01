@@ -47,12 +47,17 @@ router.post(
     // email test code to user's email address
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     // email template
+    const templateId = 'd-3e95849f027c4dce8bf19c3f7f1f1cea';
+    let dynamic_template_data = {
+      name: full_name,
+      testCode: test_code,
+    };
     const msg = {
       to: email, // Change to your recipient
       from: 'okeydeede@gmail.com', // Change to your verified sender
       subject: 'Testing Email Sending',
-      text: 'and easy to do anywhere, even with Node.js',
-      html: `<strong>Test Code : ${test_code}</strong> `,
+      templateId,
+      dynamic_template_data,
     };
     // send email
     sgMail

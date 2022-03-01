@@ -50,7 +50,7 @@ export const lightTheme = {
   paragraph: 'rgba(31, 31, 31, 0.7)',
   button: '#000000',
   toggleBtn: '#fff',
-  toggleBtnColor: '#fff',
+  toggleBtnColor: 'var(--primary-bg) !important',
   feature: {
     background:
       'linear-gradient(175.58deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.27) 99.87%);',
@@ -89,6 +89,7 @@ export const darkTheme = {
     heading: '#121E49',
     paragraph: 'rgba(31,31,31,0.7)',
   },
+
   gradient: 'linear-gradient(#39598A, #79D7ED)',
   toggleBorder: '#6B8096',
 };

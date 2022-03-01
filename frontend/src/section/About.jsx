@@ -10,7 +10,7 @@ const About = () => {
   const { theme } = useContext(DarkModeContext);
   return (
     <>
-      <Container>
+      <Container id="about">
         <AboutWrapper>
           <Column flex="0.6">
             <Typography

@@ -1,3 +1,4 @@
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
 import { Column } from '../GlobalStyle.style';
 
@@ -6,6 +7,7 @@ export const FooterWrapper = styled.div`
   width: 100%;
   padding-bottom: 30px;
   flex-wrap: wrap;
+  position: relative;
   ${Column} {
     display: flex;
   }
@@ -66,5 +68,21 @@ export const FooterWrapper = styled.div`
       font-size: 18px;
       color: #000;
     }
+  }
+`;
+
+export const FooterScroll = styled(Link)`
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 50px;
+  margin-bottom: 30px;
+
+  button {
+    color: #fff !important;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 50%;
   }
 `;

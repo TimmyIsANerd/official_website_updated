@@ -17,7 +17,7 @@ import NavLink from '../components/NavLink';
 const Features = () => {
   return (
     <>
-      <FeatureWrapper>
+      <FeatureWrapper id="features">
         <Container>
           <Typography
             className="title"
