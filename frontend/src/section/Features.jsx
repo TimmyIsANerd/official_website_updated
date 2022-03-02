@@ -40,7 +40,7 @@ const Features = () => {
                   heading
                   color="var(--primary-bg)"
                 >
-                  We are a community based project.
+                  3Swap Ecosystem
                 </Typography>
                 <Typography
                   as="p"
@@ -48,9 +48,18 @@ const Features = () => {
                   color="var(--text-bg-p)"
                   lineHeight="30px"
                 >
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy.
+                  Cross-Chain Simplified
+                </Typography>
+                <Typography
+                  as="p"
+                  fontSize="16px"
+                  color="var(--text-bg-p)"
+                  lineHeight="30px"
+                >
+                  Traders, liquidity providers, and developers interact with a
+                  cross-chain financial marketplace that is accessible and
+                  user-friendly. Non-fungible tokens become the new identity for
+                  liquidity providers.
                 </Typography>
                 <div className="social__links">
                   <NavLink url="/" label="" icon={<FaTwitter />} />
@@ -81,8 +90,8 @@ const Features = () => {
                   color="var(--text-bg-p)"
                   lineHeight="26px"
                 >
-                  lorem Ipsum is simply dummy text of the printing dummy text
-                  of.{' '}
+                  Still don't get what we do? How do we do it? Read our
+                  whitepaper to know more{' '}
                 </Typography>
               </div>
               <div className="feature">
@@ -94,7 +103,7 @@ const Features = () => {
                     fontWeight="600"
                     color="var(--primary-bg)"
                   >
-                    Investors note
+                    Protocol Governance
                   </Typography>
                   <FiExternalLink />
                 </span>
@@ -105,8 +114,8 @@ const Features = () => {
                   color="var(--text-bg-p)"
                   lineHeight="26px"
                 >
-                  lorem Ipsum is simply dummy text of the printing dummy text
-                  of.{' '}
+                  3Swap Protocol is governed by a global community of SAP token
+                  holders and delegates. We are Community-centric!{' '}
                 </Typography>
               </div>
               <div className="feature">
@@ -118,7 +127,7 @@ const Features = () => {
                     fontWeight="600"
                     color="var(--primary-bg)"
                   >
-                    Events
+                    Liquidity Sustenance
                   </Typography>
                   <FiExternalLink />
                 </span>
@@ -129,8 +138,8 @@ const Features = () => {
                   color="var(--text-bg-p)"
                   lineHeight="26px"
                 >
-                  lorem Ipsum is simply dummy text of the printing dummy text
-                  of.{' '}
+                  Providing liquidity just got cheaper, stylish, and less risky
+                  (impermanent loss is mitigated).{' '}
                 </Typography>
               </div>
             </Column>
