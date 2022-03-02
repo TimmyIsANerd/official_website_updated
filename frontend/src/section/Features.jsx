@@ -36,7 +36,6 @@ const Features = () => {
                 <Typography
                   as="h4"
                   fontSize="50px"
-                  lineHeight="120%"
                   heading
                   color="var(--primary-bg)"
                 >
@@ -46,16 +45,11 @@ const Features = () => {
                   as="p"
                   fontSize="16px"
                   color="var(--text-bg-p)"
-                  lineHeight="30px"
+                  margin="0px !important"
                 >
-                  Cross-Chain Simplified
+                  Cross-Chain Simplified.
                 </Typography>
-                <Typography
-                  as="p"
-                  fontSize="16px"
-                  color="var(--text-bg-p)"
-                  lineHeight="30px"
-                >
+                <Typography as="p" fontSize="16px" color="var(--text-bg-p)">
                   Traders, liquidity providers, and developers interact with a
                   cross-chain financial marketplace that is accessible and
                   user-friendly. Non-fungible tokens become the new identity for
@@ -79,7 +73,7 @@ const Features = () => {
                     fontWeight="600"
                     color="var(--primary-bg)"
                   >
-                    Read our whitepaper
+                    Read our whitepaper.
                   </Typography>
                   <FiExternalLink />
                 </span>
@@ -91,7 +85,7 @@ const Features = () => {
                   lineHeight="26px"
                 >
                   Still don't get what we do? How do we do it? Read our
-                  whitepaper to know more{' '}
+                  whitepaper to know more.{' '}
                 </Typography>
               </div>
               <div className="feature">
@@ -103,7 +97,7 @@ const Features = () => {
                     fontWeight="600"
                     color="var(--primary-bg)"
                   >
-                    Protocol Governance
+                    Protocol Governance.
                   </Typography>
                   <FiExternalLink />
                 </span>
@@ -115,7 +109,7 @@ const Features = () => {
                   lineHeight="26px"
                 >
                   3Swap Protocol is governed by a global community of SAP token
-                  holders and delegates. We are Community-centric!{' '}
+                  holders and delegates. We are Community-centric!.{' '}
                 </Typography>
               </div>
               <div className="feature">
@@ -127,7 +121,7 @@ const Features = () => {
                     fontWeight="600"
                     color="var(--primary-bg)"
                   >
-                    Liquidity Sustenance
+                    Liquidity Sustenance.
                   </Typography>
                   <FiExternalLink />
                 </span>
