@@ -6,7 +6,7 @@ import cors from 'cors';
 import authRoutes from './routes/auth';
 
 // Configurations
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 9977;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
