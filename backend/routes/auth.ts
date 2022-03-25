@@ -27,7 +27,7 @@ router.post(
     if (full_name.length < 5) {
       return res.json({
         errors: [
-          { msg: 'your name should contain a minimum of 5 characters.' },
+          { msg: 'Name should contain a minimum of 5 characters.' },
         ],
         data: null,
       });
