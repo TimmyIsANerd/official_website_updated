@@ -3,6 +3,7 @@ import JWT from 'jsonwebtoken';
 import { body, validationResult } from 'express-validator';
 const sgMail = require('@sendgrid/mail');
 import User from '../models/user';
+import asyncHandler from 'express-async-handler';
 const router = express.Router();
 
 router.post(
@@ -82,46 +83,51 @@ router.post(
   }
 );
 
-router.post('/verify', async (req: express.Request, res: express.Response) => {
-  try {
-    const { test_code } = req.body;
+router.post(
+  '/verify',
+  asyncHandler(
+    async (req: express.Request, res: express.Response): Promise<any> => {
+      try {
+        const { test_code } = req.body;
 
-    // check if test code is provided
-    if (!test_code) {
-      return res.json({
-        errors: [{ msg: 'Please enter a test code.' }],
-        data: null,
-      });
-    }
+        // check if test code is provided
+        if (!test_code) {
+          return res.json({
+            errors: [{ msg: 'Please enter a test code.' }],
+            data: null,
+          });
+        }
 
-    // check if code exist in DB
-    const user = await User.findOne({ test_code });
-    if (!user) {
-      return res.json({
-        errors: [{ msg: 'Invalid test code.' }],
-        data: null,
-      });
-    }
-    // return token
-    const token = await JWT.sign(
-      { email: user.email },
-      process.env.JWT_SECRET as string,
-      {
-        expiresIn: '3d',
+        // check if code exist in DB
+        const user = await User.findOne({ test_code });
+        if (!user) {
+          return res.json({
+            errors: [{ msg: 'Invalid test code.' }],
+            data: null,
+          });
+        }
+        // return token
+        const token = await JWT.sign(
+          { email: user.email, code: user.test_code },
+          process.env.JWT_SECRET as string,
+          {
+            expiresIn: '3d',
+          }
+        );
+        res.status(200).json({
+          errors: [],
+          data: {
+            token,
+            user: {
+              id: user._id,
+              full_name: user.full_name,
+            },
+          },
+        });
+      } catch (error) {
+        console.log(error);
       }
-    );
-    res.status(200).json({
-      errors: [],
-      data: {
-        token,
-        user: {
-          id: user._id,
-          full_name: user.full_name,
-        },
-      },
-    });
-  } catch (error) {
-    console.log(error);
-  }
-});
+    }
+  )
+);
 export default router;

@@ -59,24 +59,14 @@ const GetCode = ({ setOpen, setComplete }) => {
               as="h2"
               fontWeight="800"
               fontSize="24px"
-              margin="10px 0 0 0"
+              margin="10px 0"
             >
               Why we need your Email
             </Typography>
-            <Typography
-              as="p"
-              fontSize="12px"
-              margin="5px 0"
-              lineHeight="26px"
-              color="rgba(0,0,0,0.8)"
-            >
-              We need your Email to grant you FREE access to the MVP version of
-              3swap.
-            </Typography>
             <Typography as="p" fontSize="12px" color="rgba(0,0,0,0.8)">
-              We respect your privacy and promise not your mailbox with
-              irrelevant messages, our team is working hard to finish the final
-              product and we are happy you are part of us at this time.
+              We need your Email to grant you FREE access to the MVP version of
+              3swap. We respect your privacy and promise not to spam your
+              mailbox with irrelevant messages.
             </Typography>
             <Image src={Space} alt="space" />
           </Column>
