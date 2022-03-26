@@ -47,9 +47,18 @@ const Demo = () => {
       console.log(error);
     }
   };
+
+  const updateCount = async () => {
+    const token = JSON.parse(localStorage.getItem('token'));
+    await axios.post('auth/count', { token });
+  };
+
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem('token'));
     if (token) {
+      // update count
+      updateCount();
+      // re-route to swap page
       window.location = 'http://35.192.105.226:22000/swap';
     }
   }, []);

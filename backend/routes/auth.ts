@@ -3,8 +3,14 @@ import JWT from 'jsonwebtoken';
 import { body, validationResult } from 'express-validator';
 const sgMail = require('@sendgrid/mail');
 import User from '../models/user';
+import Count from '../models/counts';
 import asyncHandler from 'express-async-handler';
 const router = express.Router();
+
+type Jwt = {
+  email?: string;
+  code?: string;
+};
 
 router.post(
   '/signup',
@@ -26,9 +32,7 @@ router.post(
     const { full_name, email } = req.body;
     if (full_name.length < 5) {
       return res.json({
-        errors: [
-          { msg: 'Name should contain a minimum of 5 characters.' },
-        ],
+        errors: [{ msg: 'Name should contain a minimum of 5 characters.' }],
         data: null,
       });
     }
@@ -126,6 +130,55 @@ router.post(
         });
       } catch (error) {
         console.log(error);
+      }
+    }
+  )
+);
+
+router.post(
+  '/count',
+  asyncHandler(
+    async (req: express.Request, res: express.Response): Promise<any> => {
+      const { token } = req.body;
+      let count = 1;
+      try {
+        const decoded: Jwt = JWT.verify(
+          token,
+          process.env.JWT_SECRET as string
+        ) as Jwt;
+        const response = await User.findOne({ test_code: decoded.code });
+
+        if (response) {
+          //  get user test count.
+          const checkCount = await Count.findOne({ user: response.id });
+          if (checkCount) {
+            const update = await Count.findOneAndUpdate(response.id, {
+              count: count + 1,
+            });
+            if (update) {
+              res.status(201).json({ msg: 'updated successfully' });
+            } else {
+              res.status(200).json({ error: 'error occured' });
+            }
+          } else {
+            //  user is testing app for first time, record his/her test count
+            const newUserTest = await Count.create({
+              user: response.id,
+              email: response.email,
+              count: count,
+            });
+            if (newUserTest) {
+              res.status(201).json({ msg: 'created successfully' });
+            } else {
+              res.status(401).json({ error: 'error occured' });
+            }
+          }
+        } else {
+          res.status(401).json({ error: 'Unauthorized access' });
+        }
+      } catch (error) {
+        res.status(401);
+        throw new Error(error as string);
       }
     }
   )
