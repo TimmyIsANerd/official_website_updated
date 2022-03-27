@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Background from '../components/Background';
 import Button from '../components/Button';
@@ -33,10 +33,13 @@ const Demo = () => {
         test_code: testCode,
       });
       response = data;
+      // add token to tocal storage
+      localStorage.setItem('token', JSON.stringify(response.data.token));
       if (response.errors.length > 0) {
         MySwal.fire('Error Occured.', `${response.errors[0].msg}`, 'error');
         setLoading(false);
       } else {
+        window.location = 'http://35.192.105.226:22000/swap';
         setComplete(true);
         setLoading(false);
       }
@@ -44,6 +47,21 @@ const Demo = () => {
       console.log(error);
     }
   };
+
+  const updateCount = async () => {
+    const token = JSON.parse(localStorage.getItem('token'));
+    await axios.post('auth/count', { token });
+  };
+
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem('token'));
+    if (token) {
+      // update count
+      updateCount();
+      // re-route to swap page
+      window.location = 'http://35.192.105.226:22000/swap';
+    }
+  }, []);
   return (
     <>
       {/* Get Test Code Modal */}

@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node build/server.js",
-    "server:dev": "nodemon backend/server.ts",
+    "server": "nodemon backend/server.ts",
     "client": "sudo npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
     "build:server": "tsc",
     "build:frontend": "cd frontend && sudo yarn build"
   },
@@ -17,6 +17,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
     "express-validator": "^6.14.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.2"

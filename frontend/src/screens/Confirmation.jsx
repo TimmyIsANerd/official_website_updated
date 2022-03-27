@@ -34,7 +34,7 @@ const Confirmation = ({ setComplete }) => {
   return (
     <>
       <ConfirmationWrapper onClick={() => setComplete(false)}>
-        <Typography
+        {/* <Typography
           as="h1"
           color="#000"
           textAlign="center"
@@ -42,7 +42,7 @@ const Confirmation = ({ setComplete }) => {
           lineHeight="24px"
         >
           Welcome to the Family
-        </Typography>
+        </Typography> */}
         <Typography
           as="p"
           color="color: rgba(0, 0, 0, 0.65)"
@@ -56,7 +56,8 @@ const Confirmation = ({ setComplete }) => {
           textAlign="center"
           margin="20px 0 !important"
         >
-          Please check you email inbox or junk box for the testing code.
+          Thank you for showing interest in testing our DEX. A test code has
+          been sent to the email address you provided.
         </Typography>
         <ButtonWrapper>
           <Button
