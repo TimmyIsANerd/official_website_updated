@@ -12,7 +12,7 @@ const About = () => {
     <>
       <Container id="about">
         <AboutWrapper>
-          <Column flex="0.6">
+          <Column flex="0.6" data-aos="zoom-in" data-aos-duration="1500">
             <Typography
               as="h2"
               fontSize="31px"

@@ -229,7 +229,7 @@ const Header = () => {
               </Toggle>
             </MenuIcon>
             <NavMenu onClick={handleClick} click={click}>
-              <NavItem>
+              {/* <NavItem>
                 <NavLink
                   url="about"
                   label="About Us"
@@ -253,12 +253,12 @@ const Header = () => {
               </NavItem>
               <NavItem>
                 <Link to="/">White paper</Link>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
                 <Link to="/app">
                   <Button
                     label="Launch App"
-                    borderRadius="0px"
+                    borderRadius="8px"
                     color="#fff"
                     bgColor="#000"
                     margin="0px 10px"

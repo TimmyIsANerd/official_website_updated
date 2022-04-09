@@ -2,8 +2,6 @@ import React from 'react';
 import { Column, Container, Typography } from '../GlobalStyle.style';
 import { BannerWrapper, ImageWrapper } from '../styles/Banner.style';
 import Image from '../components/Image';
-import Button from '../components/Button';
-import { Link } from 'react-router-dom';
 import { Bg_coin } from '../assets';
 
 const Banner = () => {
@@ -11,7 +9,7 @@ const Banner = () => {
     <>
       <Container>
         <BannerWrapper>
-          <Column flex="0.6">
+          <Column flex="0.6" data-aos="zoom-in" data-aos-duration="1500">
             <Typography
               as="h1"
               fontSize="58px"
@@ -31,16 +29,6 @@ const Banner = () => {
               {' '}
               Decentralized exchange with extra powers. Swap two tokens for one.
             </Typography>
-            <Link to="/app">
-              <Button
-                label="Launch App"
-                bgColor="#000"
-                color="#fff"
-                borderRadius="0px"
-                margin="20px 0"
-                padding="13px 25px"
-              />
-            </Link>
           </Column>
           <Column>
             <ImageWrapper>
