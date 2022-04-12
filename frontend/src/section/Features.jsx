@@ -92,7 +92,7 @@ const Features = () => {
                   >
                     Read our whitepaper.
                   </Typography>
-                  <FiExternalLink />
+                  <NavAnchor url="/" icon={<FiExternalLink />} />
                 </span>
 
                 <Typography

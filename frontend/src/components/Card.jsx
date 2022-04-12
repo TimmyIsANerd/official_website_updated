@@ -65,13 +65,13 @@ const CardImage = styled.div`
   }
 `;
 
-const Card = () => {
+const Card = ({ title, description, img }) => {
   return (
     <>
       <CardWrapper data-aos="fade-up">
         <CardItem data-aos="fade-right" data-aos-duration="1500">
           <CardHeading>
-            <Typography as="h2">Stake</Typography>
+            <Typography as="h2">{title}</Typography>
           </CardHeading>
           <CardDescription>
             <Typography
@@ -81,8 +81,7 @@ const Card = () => {
               lineHeight="auto"
               color="#121E49"
             >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Reiciendis praesentium, voluptatum, non voluptas ut laboriosam,
+              {description}
             </Typography>
           </CardDescription>
         </CardItem>

@@ -5,7 +5,6 @@ import { Container } from '../GlobalStyle.style';
 import Logo from '../assets/logo_1.png';
 import Logo_Black from '../assets/logo.png';
 import Button from './Button';
-import NavLink from './NavLink';
 import Image from './Image';
 import ToggleDarkMode from './Toggle';
 
