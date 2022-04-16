@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../GlobalStyle.style';
-import Logo from '../assets/logo_1.png';
-import Logo_Black from '../assets/logo.png';
+import Logo from '../assets/3swap.svg';
 import Button from './Button';
 import Image from './Image';
 import ToggleDarkMode from './Toggle';
@@ -34,7 +33,7 @@ const NavbarContainer = styled(Container)`
   //Galaxy S9/S9+ 360x740 || iPhone 8, 7, 6S, 6 375x667
   @media screen and (min-width: 320px) and (max-width: 375px) {
     &.scrolled {
-      background: #fff;
+      background: #000;
       transition: all 0.3s ease;
       .icon {
         color: var(--primary-bg);
@@ -46,7 +45,7 @@ const NavbarContainer = styled(Container)`
   // 393x786 411x731 414x736
   @media screen and (min-width: 376px) and (max-width: 480px) {
     &.scrolled {
-      background: #fff;
+      background: #000;
       transition: all 0.3s ease;
       .icon {
         color: var(--primary-bg);
@@ -67,9 +66,15 @@ const NavbarContainer = styled(Container)`
   }
 `;
 export const NavLogo = styled.div`
-  margin-top: 10px;
-  @media screen and (min-width: 481px) and (max-width: 768px) {
-    padding-left: 20px;
+  margin-top: 20px;
+  .logo {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+  }
+  @media screen and (max-width: 768px) {
+    padding-left: 0px;
+    margin-top: 10px;
   }
 `;
 
@@ -213,11 +218,7 @@ const Header = () => {
         <NavbarContainer className={isScrolled ? 'scrolled' : ''}>
           <NavLogo>
             <Link to="/">
-              {!isScrolled ? (
-                <Image src={Logo} alt="logo" />
-              ) : (
-                <Image src={Logo_Black} alt="logo" style={{ width: '120px' }} />
-              )}
+              <Image src={Logo} alt="logo" className="logo" />
             </Link>
           </NavLogo>
           <div className="container">
