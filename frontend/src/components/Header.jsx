@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../GlobalStyle.style';
-import Logo from '../assets/logo_1.png';
-import Logo_Black from '../assets/logo.png';
+import Logo from '../assets/3swap.svg';
 import Button from './Button';
-import NavLink from './NavLink';
 import Image from './Image';
 import ToggleDarkMode from './Toggle';
+import NavAnchor from './NavAnchor';
 
 const Nav = styled.nav`
   /* background: #101522; */
@@ -34,7 +33,7 @@ const NavbarContainer = styled(Container)`
   //Galaxy S9/S9+ 360x740 || iPhone 8, 7, 6S, 6 375x667
   @media screen and (min-width: 320px) and (max-width: 375px) {
     &.scrolled {
-      background: #fff;
+      background: #000;
       transition: all 0.3s ease;
       .icon {
         color: var(--primary-bg);
@@ -46,7 +45,7 @@ const NavbarContainer = styled(Container)`
   // 393x786 411x731 414x736
   @media screen and (min-width: 376px) and (max-width: 480px) {
     &.scrolled {
-      background: #fff;
+      background: #000;
       transition: all 0.3s ease;
       .icon {
         color: var(--primary-bg);
@@ -67,9 +66,15 @@ const NavbarContainer = styled(Container)`
   }
 `;
 export const NavLogo = styled.div`
-  margin-top: 10px;
-  @media screen and (min-width: 481px) and (max-width: 768px) {
-    padding-left: 20px;
+  margin-top: 20px;
+  .logo {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+  }
+  @media screen and (max-width: 768px) {
+    padding-left: 0px;
+    margin-top: 10px;
   }
 `;
 
@@ -213,11 +218,7 @@ const Header = () => {
         <NavbarContainer className={isScrolled ? 'scrolled' : ''}>
           <NavLogo>
             <Link to="/">
-              {!isScrolled ? (
-                <Image src={Logo} alt="logo" />
-              ) : (
-                <Image src={Logo_Black} alt="logo" style={{ width: '120px' }} />
-              )}
+              <Image src={Logo} alt="logo" className="logo" />
             </Link>
           </NavLogo>
           <div className="container">
@@ -229,7 +230,7 @@ const Header = () => {
               </Toggle>
             </MenuIcon>
             <NavMenu onClick={handleClick} click={click}>
-              <NavItem>
+              {/* <NavItem>
                 <NavLink
                   url="about"
                   label="About Us"
@@ -250,15 +251,19 @@ const Header = () => {
                   exact="true"
                   duration={500}
                 />
-              </NavItem>
+              </NavItem>*/}
               <NavItem>
-                <Link to="/">White paper</Link>
+                <NavAnchor
+                  url="../docs/3swap-white-paper.pdf"
+                  label="Our whitepaper"
+                  target="_blank"
+                />
               </NavItem>
               <NavItem>
                 <Link to="/app">
                   <Button
                     label="Launch App"
-                    borderRadius="0px"
+                    borderRadius="8px"
                     color="#fff"
                     bgColor="#000"
                     margin="0px 10px"

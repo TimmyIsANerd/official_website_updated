@@ -7,19 +7,19 @@ import {
 } from '../styles/Features.style';
 import { FiExternalLink } from 'react-icons/fi';
 import {
-  FaDiscord,
   FaFacebookF,
   FaTwitter,
   FaTelegramPlane,
+  FaMediumM,
 } from 'react-icons/fa';
-import NavLink from '../components/NavLink';
+import NavAnchor from '../components/NavAnchor';
 
 const Features = () => {
   return (
     <>
-      <FeatureWrapper id="features">
+      <FeatureWrapper id="features" data-aos="fade-up" data-aos-duration="1500">
         <Container>
-          <Typography
+          {/* <Typography
             className="title"
             as="h2"
             fontSize="18px"
@@ -29,7 +29,7 @@ const Features = () => {
             margin="0 0 0 8px"
           >
             Features
-          </Typography>
+          </Typography> */}
           <FeaturesWrapper>
             <Column flex="0.6">
               <FeatureHeading>
@@ -56,10 +56,27 @@ const Features = () => {
                   liquidity providers.
                 </Typography>
                 <div className="social__links">
-                  <NavLink url="/" label="" icon={<FaTwitter />} />
-                  <NavLink url="/" label="" icon={<FaFacebookF />} />
-                  <NavLink url="/" label="" icon={<FaDiscord />} />
-                  <NavLink url="/" label="" icon={<FaTelegramPlane />} />
+                  <NavAnchor
+                    url="https://twitter.com/3swapdex"
+                    label=""
+                    icon={<FaTwitter />}
+                  />
+                  <NavAnchor
+                    url="https://facebook.com/3swapdex/"
+                    label=""
+                    icon={<FaFacebookF />}
+                  />
+                  {/* <NavAnchor url="/" label="" icon={<FaDiscord />} /> */}
+                  <NavAnchor
+                    url="https://t.me/dex_3SwapOfficial"
+                    label=""
+                    icon={<FaTelegramPlane />}
+                  />
+                  <NavAnchor
+                    url="https://3swap.medium.com/"
+                    label=""
+                    icon={<FaMediumM />}
+                  />
                 </div>
               </FeatureHeading>
             </Column>
@@ -75,7 +92,11 @@ const Features = () => {
                   >
                     Read our whitepaper.
                   </Typography>
-                  <FiExternalLink />
+                  <NavAnchor
+                    url="../docs/3swap-white-paper.pdf"
+                    target="_blank"
+                    icon={<FiExternalLink />}
+                  />
                 </span>
 
                 <Typography
@@ -99,7 +120,6 @@ const Features = () => {
                   >
                     Protocol Governance.
                   </Typography>
-                  <FiExternalLink />
                 </span>
 
                 <Typography
@@ -123,7 +143,6 @@ const Features = () => {
                   >
                     Liquidity Sustenance.
                   </Typography>
-                  <FiExternalLink />
                 </span>
 
                 <Typography

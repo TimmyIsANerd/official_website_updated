@@ -8,6 +8,9 @@ export const FooterWrapper = styled.div`
   padding-bottom: 30px;
   flex-wrap: wrap;
   position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   ${Column} {
     display: flex;
   }
@@ -39,7 +42,9 @@ export const FooterWrapper = styled.div`
     flex-direction: column;
     margin-left: 10px;
     ${Column} {
-      flex-direction: column;
+      flex-direction: row;
+      overflow: hidden;
+      flex-wrap: wrap;
     }
     a {
       font-size: 16px;

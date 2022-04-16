@@ -6,8 +6,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node build/server.js",
     "server": "nodemon backend/server.ts",
-    "client": "sudo npm start --prefix frontend",
-    "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build:server": "tsc",
     "build:frontend": "cd frontend && sudo yarn build"
   },

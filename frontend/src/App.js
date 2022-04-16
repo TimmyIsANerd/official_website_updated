@@ -1,16 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { createContext } from 'react';
+import { createContext, useEffect } from 'react';
 import Demo from './pages/Demo';
 import Home from './pages/Home';
 import GlobalStyle, { lightTheme, darkTheme } from './GlobalStyle.style';
 import { ThemeProvider } from 'styled-components';
 import { useDarkMode } from './hooks/useDarkMode';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export const DarkModeContext = createContext(
   window.localStorage.getItem('theme') || 'light'
 );
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const [theme, toggleTheme] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 

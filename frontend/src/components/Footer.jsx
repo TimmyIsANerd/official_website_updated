@@ -10,10 +10,14 @@ const Footer = () => {
       <Container>
         <FooterWrapper>
           <Column>
+            <NavLink url="/" label="Swap" icon={<FiExternalLink />} />
+            <NavLink url="/" label="Liquidity" icon={<FiExternalLink />} />
+            <NavLink url="/" label="Farm" icon={<FiExternalLink />} />
+            <NavLink url="/" label="Stake" icon={<FiExternalLink />} />
+            <NavLink url="/" label="Lend" icon={<FiExternalLink />} />
+            <NavLink url="/" label="NFT" icon={<FiExternalLink />} />
+            <NavLink url="/" label="Bridge" icon={<FiExternalLink />} />
             <NavLink url="/" label="Ecosystem" icon={<FiExternalLink />} />
-            <NavLink url="/" label="Careers" icon={<FiExternalLink />} />
-            <NavLink url="/" label="Blog" icon={<FiExternalLink />} />
-            <NavLink url="/" label="Support" icon={<FiExternalLink />} />
           </Column>
         </FooterWrapper>
       </Container>
