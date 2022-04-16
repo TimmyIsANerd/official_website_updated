@@ -10,7 +10,7 @@ const StyledLink = styled.a`
     align-items: center;
   }
 `;
-const NavLink = ({ url, label, icon, ...children }) => {
+const NavAnchor = ({ url, label, icon, ...children }) => {
   return (
     <>
       <StyledLink href={url} {...children}>
@@ -21,4 +21,4 @@ const NavLink = ({ url, label, icon, ...children }) => {
   );
 };
 
-export default NavLink;
+export default NavAnchor;

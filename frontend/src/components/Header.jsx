@@ -7,6 +7,7 @@ import Logo_Black from '../assets/logo.png';
 import Button from './Button';
 import Image from './Image';
 import ToggleDarkMode from './Toggle';
+import NavAnchor from './NavAnchor';
 
 const Nav = styled.nav`
   /* background: #101522; */
@@ -249,10 +250,14 @@ const Header = () => {
                   exact="true"
                   duration={500}
                 />
-              </NavItem>
+              </NavItem>*/}
               <NavItem>
-                <Link to="/">White paper</Link>
-              </NavItem> */}
+                <NavAnchor
+                  url="../docs/3swap-white-paper.pdf"
+                  label="Our whitepaper"
+                  target="_blank"
+                />
+              </NavItem>
               <NavItem>
                 <Link to="/app">
                   <Button

@@ -116,7 +116,6 @@ const Features = () => {
                   >
                     Protocol Governance.
                   </Typography>
-                  <FiExternalLink />
                 </span>
 
                 <Typography
@@ -140,7 +139,6 @@ const Features = () => {
                   >
                     Liquidity Sustenance.
                   </Typography>
-                  <FiExternalLink />
                 </span>
 
                 <Typography

@@ -5,7 +5,7 @@ import Features from '../section/Features';
 import Footer from '../components/Footer';
 import Background from '../components/HeaderBg';
 import Header from '../components/Header';
-import Products from '../section/Products';
+// import Products from '../section/Products';
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
         <Header />
         <Banner />
       </Background>
-      <Products />
+      {/* <Products /> */}
       <About />
       <Features />
       <Footer />
