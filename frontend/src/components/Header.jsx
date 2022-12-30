@@ -259,7 +259,7 @@ const Header = () => {
                   target="_blank"
                 />
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <Link to="/app">
                   <Button
                     label="Launch App"
@@ -269,7 +269,7 @@ const Header = () => {
                     margin="0px 10px"
                   />
                 </Link>
-              </NavItem>
+              </NavItem> */}
             </NavMenu>
             <ToggleDarkMode />
           </div>

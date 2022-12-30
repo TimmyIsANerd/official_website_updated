@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { createContext, useEffect } from 'react';
-import Demo from './pages/Demo';
 import Home from './pages/Home';
 import GlobalStyle, { lightTheme, darkTheme } from './GlobalStyle.style';
 import { ThemeProvider } from 'styled-components';
@@ -27,7 +26,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/app" element={<Demo />} />
+            {/* <Route path="/app" element={<Demo />} /> */}
           </Routes>
         </Router>
       </DarkModeContext.Provider>
