@@ -26,6 +26,8 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   app.get('/', (req, res) => res.send('Please set development to production'));
 }
+
+app.listen(PORT, () => console.log(`App running on port ${PORT}`));
 // DB connection
 // mongoose
 //   .connect(process.env.MONGO_URI as string)
