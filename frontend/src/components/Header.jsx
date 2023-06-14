@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../GlobalStyle.style';
 import Logo from '../assets/3swap.svg';
-import Button from './Button';
 import Image from './Image';
 import ToggleDarkMode from './Toggle';
 import NavAnchor from './NavAnchor';
